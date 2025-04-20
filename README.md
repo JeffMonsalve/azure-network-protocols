@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ac332c2a-5a7a-48f3-afea-bb4c6156af26" alt="Diagram or Screenshot" width="600"/>
+ <img src="https://github.com/user-attachments/assets/26ea713f-94b8-4f83-9cb5-517b8e295bb7" alt="Transcript Screenshot" width="600"/>
 </p>
+
+
 
 
 
