@@ -43,7 +43,7 @@ We’ll start by creating two virtual machines in Azure—one running Windows an
 <p>
 </p>
 <p>
-Use Remote Desktop to connect to your Windows 10 Virtual Machine by using its Public IP address  
+Use Remote Desktop to connect to your Windows 10 Virtual Machine by using its Public IP address.  
 </p>
 <img src="https://github.com/user-attachments/assets/38050980-979b-4031-9b49-0448e2924b74" alt="Eighteenth Screenshot" width="800"/>
 </p>
