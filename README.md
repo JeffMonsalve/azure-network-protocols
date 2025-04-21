@@ -8,7 +8,7 @@
 
 
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
+<h1>Implementing NSGs & Analyzing Network Traffic Between Azure VMs </h1>
 
 In this tutorial, We’ll set up firewall rules and monitor how network traffic behaves with different protocols between two virtual machines.
  <br />
