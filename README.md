@@ -9,7 +9,9 @@
 
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we analyze network traffic to and from Azure Virtual Machines using Wireshark as well as experiment with Network Security Groups. <br />
+
+In this tutorial, we'll be observing two virtual machines, each running a different operating system. Each VM will be associated with its own Network Security Group (firewall), and we’ll be observing network traffic exchanged between the two.
+ <br />
 
 
 
@@ -32,48 +34,62 @@ In this tutorial, we analyze network traffic to and from Azure Virtual Machines 
 <p>
 </p>
 <p>
-Welcome to my tutorial on Network Security Groups and Inspecting Network Protocols. First you will need to create two VMs on Azure. One machine will be a Linux machine and the other will be a Windows 10 machine. Both will have two cpus and they must be on the same VNET. Once that is done go on the Windows machine and download Wireshark. I will attatch a link to the wireshark download. https://www.wireshark.org/download.html Once installed open Wireshark and filter for ICMP Traffic only. ICMP is a network layer protocol that relays messages concerning network connection issues. Ping uses this protocol, ping tests connectivity between hosts. When we filter wirehsark to only capture ICMP packets and ping the private IP address of our linux machine we can visually see the packets on wireshark. 
+We’ll start by creating two virtual machines in Azure—one running Windows and the other running Linux. As part of this process, two separate virtual networks will also be created. Each VM should have at least 2 vCPUs and be in the same region & VNET. 
 </p>
-<br />
-<p>
-<img src="https://i.imgur.com/IIUShxp.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-We can inspect each individual packet and see the actual data that is being sent in each ping. the picture below demonstrates just that. 
-</p>
-<br />
-<p>
-<img src="https://i.imgur.com/GLxSIG3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/user-attachments/assets/345a964e-76e4-403e-a870-37efefacc2d6" alt="Script Screenshot" width="600"/>
+
+
 </p>
 <p>
-In the next portion of the lab we will perpetually ping the Linux machine with the command ping -t. This will continually ping the machine until we decide to stop it, while the Windows machine is pinging the Linux machine we will go to the Linux machine and block inbound ICMP traffic on it's firewall. Once we do that we will stop recieving echo replys from the Linux machine. We will block ICMP by creating a new Network Security Group on the Linux machine that will be set to block ICMP. We can allow the traffic by allowing ICMP on the Linux Network Security Groups page on Azure. 
+Use Remote Desktop to connect to your Windows 10 Virtual Machine by using its Public IP address  
 </p>
-<br />
-<img src="https://i.imgur.com/5vXO75R.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<img src="https://i.imgur.com/Asl80tN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<p>
-Next we will use our Windows machine to SSH to the Linux machine. SSH has no GUI it just gives the user access to the machines CLI. We will set the wireshark filter to capture SSH packets only. When we ssh into the Linux machine with the command prompt "ssh labuser@10.0.0.5" we can see that wireshark starts to immediately capture SSH packets.
-</p>
-<br />
-<img src="https://i.imgur.com/zteR41r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/user-attachments/assets/c147e5ef-803f-41c7-b10c-7a081aa9e007" alt="Third Screenshot" width="600"/>
+
+
 </p>
 <p>
-Now we will use wireshark to filter for DHCP. DHCP is the Dynamic Host Configuration Protocol this works on ports 67/68. It is used to assign IP addresses to machines. We will request a new ip address with the command "ipconfig /renew". Once we enter the command wireshark will capture DHCP traffic.
+Within Windows 10 VM, use this link: https://www.wireshark.org/download.html to download and install Wireshark.
 </p>
-<br />
-<img src="https://i.imgur.com/vU8fpQf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/user-attachments/assets/1a4a0995-7210-4143-91fb-5c686d775745" alt="Screenshot Preview" width="600"/>
+
+
+
+<p>
+When we open Wireshark, we'll see all the network traffic occurring behind the scenes on this virtual machine. We'll begin a packet capture session, which allows us to monitor packets — small units of data sent across the network. Using Wireshark, we can see where each packet is coming from and where it’s going, based on its IP addresses.
+</p>
+<img src="https://github.com/user-attachments/assets/72bbcd9d-9e71-4a27-aed1-c78b0cd65e36" alt="Fifth Screenshot" width="600"/>
+
+
 </p>
 <p>
-Time to filter DNS traffic. We will set wireshark to filter DNS traffic. We will initiate DNS traffic by typing in the command "nslookup www.google.com" this command essentially asks our DNS server what is google's IP address.
+We will get the private IP address of the Linux virtual machine, then use PowerShell on Windows 10 VM to ping that IP. In Wireshark, we'll apply a filter to display only ICMP traffic, allowing us to see all the network traffic between the 2 virtual machines. 
 </p>
-<br />
-<img src="https://i.imgur.com/VMcwmsO.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lastly we will filter for RDP traffic. When we enter tcp.port==3389 traffic is spammed non stop because we are using Remote Desktop Protocol to connect to our Virtual Machine. 
-</p>
-<br />
-<img src="https://i.imgur.com/VxXGv6X.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/user-attachments/assets/5e6cbe98-93fc-4901-8733-371586934c2b" alt="Sixth Screenshot" width="600"/>
+
+
 </p>
 <p>
+Then we will initiate a continuous ping to the Linux VM from the Windows 10 VM by typing ping 10.0.0.5 -t in PowerShell. Meanwhile, in the Azure portal, we will configure a firewall rule on the Linux VM to block ICMP traffic.
+</p>
+<img src="https://github.com/user-attachments/assets/d968dfcb-4ca1-4a45-90a4-2c1456384c13" alt="Seventh Screenshot" width="600"/>
+<img src="https://github.com/user-attachments/assets/36db1209-2dac-41a1-975c-5a70825b7d27" alt="Eighth Screenshot" width="600"/>
+
+
+</p>
+<Next, we will use SSH from the Windows 10 VM to remotely access the Linux VM. SSH provides a secure, text-based interface that encrypts all data transmitted between the two machines. We’ll establish the connection by entering ssh Labuser@10.0.0.5 in PowerShell and the password. Once connected, we’ll set Wireshark filter to capture SSH packets only.
+
+<img src="https://github.com/user-attachments/assets/aa6fbd1a-7452-492d-ad02-4565d0c8508b" alt="Ninth Screenshot" width="600"/>
+
+
+</p>
+Now it’s time to filter DNS traffic. We'll configure Wireshark to capture only DNS packets. To generate DNS traffic, we’ll use the command nslookup www.disney.com, which sends a request to the DNS server asking for the IP address associated with the Disney website.
+</p>
+
+<img src="https://github.com/user-attachments/assets/e3e24000-6a7a-4034-a335-bc3de1d653ec" alt="Tenth Screenshot" width="600"/>
+
+
+<p>
+Lastly, we will filter for RDP traffic. By applying the filter tcp.port == 3389 in Wireshark, we can isolate Remote Desktop Protocol packets. You'll notice a continuous stream of traffic, as RDP is constantly sending data to your computer so that the screen looks exactly like the Windows 10 machine.
+</p>
+<img src="https://github.com/user-attachments/assets/550d952b-07db-4dc4-9ccd-7a4c8086b1c4" alt="Eleventh Screenshot" width="600"/>
+
