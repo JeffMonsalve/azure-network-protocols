@@ -36,14 +36,19 @@ In this tutorial, we'll be observing two virtual machines, each running a differ
 <p>
 We’ll start by creating two virtual machines in Azure—one running Windows and the other running Linux. As part of this process, two separate virtual networks will also be created. Each VM should have at least 2 vCPUs and be in the same region & VNET. 
 </p>
-<img src="https://github.com/user-attachments/assets/345a964e-76e4-403e-a870-37efefacc2d6" alt="Script Screenshot" width="800"/>
+<img src="https://github.com/user-attachments/assets/047d3d27-9b19-4318-a8f3-0d103c779959" alt="Sixteenth Screenshot" width="800"/>
+
+
+
 
 
 </p>
 <p>
 Use Remote Desktop to connect to your Windows 10 Virtual Machine by using its Public IP address  
 </p>
-<img src="https://github.com/user-attachments/assets/c147e5ef-803f-41c7-b10c-7a081aa9e007" alt="Third Screenshot" width="800"/>
+<img src="https://github.com/user-attachments/assets/38050980-979b-4031-9b49-0448e2924b74" alt="Eighteenth Screenshot" width="800"/>
+
+
 
 
 </p>
