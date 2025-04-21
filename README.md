@@ -10,7 +10,7 @@
 
 <h1>Implementing NSGs & Analyzing Network Traffic Between Azure VMs </h1>
 
-In this tutorial, We’ll set up firewall rules and monitor how network traffic behaves with different protocols between two virtual machines.
+In this tutorial, We’ll setup firewall rules and monitor how network traffic behaves with different protocols between two virtual machines.
  <br />
 
 
@@ -70,7 +70,7 @@ When we open Wireshark, we'll see all the network traffic occurring behind the s
 <p>
 </p>
 <p>
-We will get the private IP address of the Linux virtual machine, then use PowerShell on Windows 10 VM to ping that IP. In Wireshark, we'll apply a filter to display only ICMP traffic, allowing us to see all the network traffic between the 2 virtual machines. 
+Then will get the private IP address of the Linux virtual machine, then use PowerShell on Windows 10 VM to ping that IP. In Wireshark, we'll apply a filter to display only ICMP traffic, allowing us to see all the network traffic between the 2 virtual machines. 
 </p>
 <img src="https://github.com/user-attachments/assets/5e6cbe98-93fc-4901-8733-371586934c2b" alt="Sixth Screenshot" width="800"/>
 </p>
@@ -79,7 +79,7 @@ We will get the private IP address of the Linux virtual machine, then use PowerS
 <p>
 </p>
 <p>
-Then we will initiate a continuous ping to the Linux VM from the Windows 10 VM by typing ping 10.0.0.5 -t in PowerShell. Meanwhile, in the Azure portal, we will configure a firewall rule on the Linux VM to block ICMP traffic.
+And initiate a continuous ping to the Linux VM from the Windows 10 VM by typing ping 10.0.0.5 -t in PowerShell. Meanwhile, in the Azure portal, we will configure a firewall rule on the Linux VM to block ICMP traffic.
 </p>
 <img src="https://github.com/user-attachments/assets/d968dfcb-4ca1-4a45-90a4-2c1456384c13" alt="Seventh Screenshot" width="800"/>
 <img src="https://github.com/user-attachments/assets/36db1209-2dac-41a1-975c-5a70825b7d27" alt="Eighth Screenshot" width="800"/>
