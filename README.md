@@ -10,7 +10,7 @@
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
 
-In this tutorial, we'll be observing two virtual machines, each running a different operating system. Each VM will be associated with its own Network Security Group (firewall), and we’ll be observing network traffic exchanged between the two.
+In this tutorial, We’ll set up firewall rules and monitor how network traffic behaves with different protocols between two virtual machines.
  <br />
 
 
