@@ -21,7 +21,7 @@ In this tutorial, we'll be observing two virtual machines, each running a differ
 - Microsoft Azure (Virtual Machines)
 - Remote Desktop
 - Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Various Network Protocols (ICMP, SSH, DNS, RDH)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
