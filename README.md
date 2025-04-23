@@ -10,7 +10,7 @@
 
 <h1>Implementing NSGs & Analyzing Network Traffic Between Azure VMs </h1>
 
-In this tutorial, We’ll setup firewall rules and monitor how network traffic behaves with different protocols between two virtual machines.
+In this tutorial, we’ll set up firewall rules in Microsoft Azure and monitor how network traffic behaves with different protocols between two virtual machines using Wireshark.
  <br />
 
 
