@@ -61,12 +61,12 @@ Within Windows 10 VM, use this link: https://www.wireshark.org/download.html to 
 <p>
 </p>
 <p>
-When we open Wireshark, we'll see all the network traffic occurring behind the scenes on this virtual machine. We'll begin a packet capture session, which allows us to monitor packets — small units of data sent across the network. Using Wireshark, we can see where each packet is coming from and where it’s going, based on its IP addresses.
+
 </p>
 <img src="https://github.com/user-attachments/assets/72bbcd9d-9e71-4a27-aed1-c78b0cd65e36" alt="Fifth Screenshot" width="800"/>
 </p>
-<br />
-
+<p>
+When we open Wireshark, we'll see all the network traffic occurring behind the scenes on this virtual machine. We'll begin a packet capture session, which allows us to monitor packets — small units of data sent across the network. Using Wireshark, we can see where each packet is coming from and where it’s going, based on its IP addresses.
 <p>
 </p>
 <p>
