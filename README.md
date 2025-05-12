@@ -89,34 +89,35 @@ And initiate a continuous ping to the Linux VM from the Windows 10 VM by typing 
 <p>
 </p>
 <p>
-<Next, we will use SSH from the Windows 10 VM to remotely access the Linux VM. SSH provides a secure, text-based interface that encrypts all data transmitted between the two machines. We’ll establish the connection by entering ssh Labuser@10.0.0.5 in PowerShell and the password. Once connected, we’ll set Wireshark filter to capture SSH packets only.
+
 
 <img src="https://github.com/user-attachments/assets/aa6fbd1a-7452-492d-ad02-4565d0c8508b" alt="Ninth Screenshot" width="800"/>
 </p>
-<br />
-
-<p>
-</p>
 <p>
 Next, we will use SSH from the Windows 10 VM to remotely access the Linux VM. SSH provides a secure, text-based interface that encrypts all data transmitted between the two machines. We’ll establish the connection by entering ssh Labuser@10.0.0.5 in PowerShell and the password. Once connected, we’ll set Wireshark filter to capture SSH packets only.
-<img src="https://github.com/user-attachments/assets/55a0b6f3-507c-40a6-9db3-100c4406c086" alt="Nineteenth Screenshot" width="800"/>
+<p>
+</p>
+<p>
+
 </p>
 <br />
 
 <p>
+</p>
+<p>
+
+
+<img src="https://github.com/user-attachments/assets/e3e24000-6a7a-4034-a335-bc3de1d653ec" alt="Tenth Screenshot" width="800"/>
 </p>
 <p>
 Now it’s time to filter DNS traffic. We'll configure Wireshark to capture only DNS packets. To generate DNS traffic, we’ll use the command nslookup www.disney.com, which sends a request to the DNS server asking for the IP address associated with the Disney website.
 </p>
-
-<img src="https://github.com/user-attachments/assets/e3e24000-6a7a-4034-a335-bc3de1d653ec" alt="Tenth Screenshot" width="800"/>
-</p>
-<br />
-
 <p>
+</p>
+<p>
+
+</p>
+<img src="https://github.com/user-attachments/assets/550d952b-07db-4dc4-9ccd-7a4c8086b1c4" alt="Eleventh Screenshot" width="800"/>
 </p>
 <p>
 Lastly, we will filter for RDP traffic. By applying the filter tcp.port == 3389 in Wireshark, we can isolate Remote Desktop Protocol packets. You'll notice a continuous stream of traffic, as RDP is constantly sending data to your computer so that the screen looks exactly like the Windows 10 machine.
-</p>
-<img src="https://github.com/user-attachments/assets/550d952b-07db-4dc4-9ccd-7a4c8086b1c4" alt="Eleventh Screenshot" width="800"/>
-
