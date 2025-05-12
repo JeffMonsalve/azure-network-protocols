@@ -52,12 +52,12 @@ Use Remote Desktop to connect to your Windows 10 Virtual Machine by using its Pu
 <p>
 </p>
 <p>
-Within Windows 10 VM, use this link: https://www.wireshark.org/download.html to download and install Wireshark.
+
 </p>
 <img src="https://github.com/user-attachments/assets/1a4a0995-7210-4143-91fb-5c686d775745" alt="Screenshot Preview" width="800"/>
 </p>
-<br />
-
+<p>
+Within Windows 10 VM, use this link: https://www.wireshark.org/download.html to download and install Wireshark.
 <p>
 </p>
 <p>
