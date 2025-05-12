@@ -70,12 +70,12 @@ When we open Wireshark, we'll see all the network traffic occurring behind the s
 <p>
 </p>
 <p>
-Then will get the private IP address of the Linux virtual machine, then use PowerShell on Windows 10 VM to ping that IP. In Wireshark, we'll apply a filter to display only ICMP traffic, allowing us to see all the network traffic between the 2 virtual machines. 
+
 </p>
 <img src="https://github.com/user-attachments/assets/5e6cbe98-93fc-4901-8733-371586934c2b" alt="Sixth Screenshot" width="800"/>
 </p>
-<br />
-
+<p>
+Then will get the private IP address of the Linux virtual machine, then use PowerShell on Windows 10 VM to ping that IP. In Wireshark, we'll apply a filter to display only ICMP traffic, allowing us to see all the network traffic between the 2 virtual machines. 
 <p>
 </p>
 <p>
