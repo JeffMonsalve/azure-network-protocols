@@ -34,12 +34,12 @@ In this tutorial, we’ll set up firewall rules in Microsoft Azure and monitor h
 <p>
 </p>
 <p>
-We’ll start by creating two virtual machines in Azure—one running Windows and the other running Linux. As part of this process, two separate virtual networks will also be created. Each VM should have at least 2 vCPUs and be in the same region & VNET. 
+
 </p>
 <img src="https://github.com/user-attachments/assets/047d3d27-9b19-4318-a8f3-0d103c779959" alt="Sixteenth Screenshot" width="800"/>
 </p>
-<br />
-
+<p>
+We’ll start by creating two virtual machines in Azure—one running Windows and the other running Linux. As part of this process, two separate virtual networks will also be created. Each VM should have at least 2 vCPUs and be in the same region & VNET. 
 <p>
 </p>
 <p>
