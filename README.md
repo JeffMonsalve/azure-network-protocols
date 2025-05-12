@@ -79,13 +79,13 @@ Then will get the private IP address of the Linux virtual machine, then use Powe
 <p>
 </p>
 <p>
-And initiate a continuous ping to the Linux VM from the Windows 10 VM by typing ping 10.0.0.5 -t in PowerShell. Meanwhile, in the Azure portal, we will configure a firewall rule on the Linux VM to block ICMP traffic.
+
 </p>
 <img src="https://github.com/user-attachments/assets/d968dfcb-4ca1-4a45-90a4-2c1456384c13" alt="Seventh Screenshot" width="800"/>
 <img src="https://github.com/user-attachments/assets/36db1209-2dac-41a1-975c-5a70825b7d27" alt="Eighth Screenshot" width="800"/>
 </p>
-<br />
-
+<p>
+And initiate a continuous ping to the Linux VM from the Windows 10 VM by typing ping 10.0.0.5 -t in PowerShell. Meanwhile, in the Azure portal, we will configure a firewall rule on the Linux VM to block ICMP traffic.
 <p>
 </p>
 <p>
